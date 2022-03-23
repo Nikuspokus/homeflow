@@ -35,7 +35,33 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: 'AIzaSyCQb53icERdkZcDREGjpiSJXPTIieW25aE',
+          authDomain: 'trello-clone-59123.firebaseapp.com',
+          projectId: 'trello-clone-59123',
+          storageBucket: 'trello-clone-59123.appspot.com',
+          messagingSenderId: '122739194092',
+          appId: '1:122739194092:web:f046a63fc1aa4717230dc9',
+        },
+        services: {
+          auth: {
+            persistence: 'local', // default
+            initialize: {
+              onAuthStateChangedAction: 'onAuthStateChangedAction',
+              subscribeManually: false,
+            },
+            ssr: false,
+          },
+          firestore: true,
+          storage: true,
+        },
+      },
+    ],
+  ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
