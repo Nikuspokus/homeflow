@@ -59,6 +59,7 @@ export default {
           that.snackbar = true
         })
         .then((user) => {
+          //we are signed in
           $nuxt.$router.push('/')
         })
     },
