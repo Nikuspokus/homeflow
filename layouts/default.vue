@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <v-content>
+      <!-- desktop -->
       <!-- <div class="d-none d-md-block"></div> -->
+      <!-- mobile -->
       <div class="d-block">
         <v-container fluid class="jello-topbar">
           <v-row no-gutters align="center" justify="start">
@@ -27,13 +29,14 @@
           <v-container fluid class="jello-topbar">
             <v-row no-gutters align="center" justify="space-between">
               <v-icon @click="drawer = false">mdi-close</v-icon>
+
               <v-row no-gutters align="center" justify="end">
                 <p class="jello-user">
-                  Signed in as <br />
+                  Signed in as<br />
                   {{ $nuxt.$fire.auth.currentUser.email }}
                 </p>
                 &nbsp;
-                <v-icon>mdi-acount-circle-outline</v-icon>
+                <v-icon>mdi-account-circle-outline</v-icon>
               </v-row>
             </v-row>
           </v-container>
@@ -43,9 +46,9 @@
                 <br />
               </div>
               <div class="d-flex">
-                <nuxt-link to="/">
+                <nuxt-link to="/layout/board">
                   <v-icon>mdi-view-dashboard-variant-outline</v-icon
-                  >&nbsp;&nbsp;<b>My boards</b>
+                  >&nbsp;&nbsp;<b>My Boards</b>
                 </nuxt-link>
               </div>
               <div class="d-flex">
@@ -57,35 +60,29 @@
           </v-container>
         </v-navigation-drawer>
       </div>
+      <!-- content -->
+      <nuxt />
     </v-content>
   </v-app>
 </template>
 
 <script>
 export default {
-  name: 'DefaultLayout',
   data() {
     return {
-      clipped: false,
       drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
-        },
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js',
     }
   },
 }
 </script>
+
+<style lang="scss" scoped>
+a {
+  text-decoration: none;
+}
+.menu-items a {
+  color: $text-color;
+  padding: 10px 0px 10px 3px;
+  font-size: 24px;
+}
+</style>

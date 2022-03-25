@@ -52,6 +52,7 @@ export default {
           messagingSenderId: '122739194092',
           appId: '1:122739194092:web:f046a63fc1aa4717230dc9',
         },
+
         services: {
           auth: {
             persistence: 'local', // default
